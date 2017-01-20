@@ -1,0 +1,10 @@
+starred:
+- fullname
+- description
+- owner
+    -> fullname
+    -> username
+- homepage
+- starred_at 
+- repo updated_at
+- repo created_at

@@ -1,0 +1,4 @@
+.env
+vendor/*
+starred.json
+public/node_modules/*

@@ -1,0 +1,16 @@
+hash: b9c4374aeee0cd0f4d0868747b197c680e2e502c60cd20ae3fdc468fde4816f4
+updated: 2016-12-23T22:06:55.026067368+07:00
+imports:
+- name: github.com/boltdb/bolt
+  version: 583e8937c61f1af6513608ccc75c97b6abdf4ff9
+  subpackages:
+  - '...'
+- name: github.com/google/go-github
+  version: b272bb85ab53b610b5660988998feb0e0294bd2b
+  subpackages:
+  - github
+- name: github.com/joho/godotenv
+  version: a01a834e1654b4c9ca5b3ad05159445cc9c7ad08
+- name: github.com/kelseyhightower/envconfig
+  version: 9aca109c9aec4633fced9717c4a09ecab3d33111
+testImports: []
