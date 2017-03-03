@@ -1,7 +1,11 @@
 package server
 
 import (
+	"encoding/json"
+	"html/template"
+	"io/ioutil"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/k0kubun/pp"
@@ -14,15 +18,16 @@ func handleNoWWW(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleIndex(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "templates/index.html")
-}
+	file, e := ioutil.ReadFile("./mix-manifest.json")
+	if e != nil {
+		os.Exit(1)
+	}
 
-func handleStatic(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "public/"+r.URL.Path)
-}
+	var m MixManifest
+	json.Unmarshal(file, &m)
 
-func handleNotFound(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "templates/404.html")
+	t, _ := template.ParseFiles("./resources/views/index.html")
+	t.Execute(w, m)
 }
 
 func listStared(w http.ResponseWriter, r *http.Request) {

@@ -1,16 +1,58 @@
-hash: b9c4374aeee0cd0f4d0868747b197c680e2e502c60cd20ae3fdc468fde4816f4
-updated: 2016-12-23T22:06:55.026067368+07:00
+hash: 2e721b90025a63643c0a1ed91ae70af62469c0e6d7eaea56e8d99e33028d87cf
+updated: 2017-03-03T20:03:35.528329219+08:00
 imports:
 - name: github.com/boltdb/bolt
   version: 583e8937c61f1af6513608ccc75c97b6abdf4ff9
   subpackages:
   - '...'
+- name: github.com/golang/protobuf
+  version: 69b215d01a5606c843240eab4937eab3acee6530
+  subpackages:
+  - proto
 - name: github.com/google/go-github
   version: b272bb85ab53b610b5660988998feb0e0294bd2b
   subpackages:
   - github
+- name: github.com/google/go-querystring
+  version: 53e6ce116135b80d037921a7fdd5138cf32d7a8a
+  subpackages:
+  - query
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/handlers
+  version: 3a5767ca75ece5f7f1440b1d16975247f8d8b221
+- name: github.com/gorilla/mux
+  version: 392c28fe23e1c45ddba891b0320b3b5df220beea
 - name: github.com/joho/godotenv
-  version: a01a834e1654b4c9ca5b3ad05159445cc9c7ad08
+  version: 726cc8b906e3d31c70a9671c90a13716a8d3f50d
+- name: github.com/k0kubun/pp
+  version: d1532fc5d94ecdf2da29e24d7b99721f3287de4a
 - name: github.com/kelseyhightower/envconfig
-  version: 9aca109c9aec4633fced9717c4a09ecab3d33111
+  version: f611eb38b3875cc3bd991ca91c51d06446afa14c
+- name: github.com/mattn/go-colorable
+  version: d898aa9fb31c91f35dd28ca75db377eff023c076
+- name: github.com/mattn/go-isatty
+  version: dda3de49cbfcec471bd7a70e6cc01fcc3ff90109
+- name: golang.org/x/net
+  version: f2499483f923065a842d38eb4c7f1927e6fc6e6d
+  subpackages:
+  - context
+- name: golang.org/x/oauth2
+  version: efb10a30610e617dbb17fc243f4cc61a8cfa2903
+  subpackages:
+  - internal
+- name: golang.org/x/sys
+  version: d75a52659825e75fff6158388dddc6a5b04f9ba5
+  subpackages:
+  - unix
+- name: google.golang.org/appengine
+  version: 3a452f9e00122ead39586d68ffdb9c6e1326af3c
+  subpackages:
+  - internal
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/remote_api
+  - internal/urlfetch
+  - urlfetch
 testImports: []
