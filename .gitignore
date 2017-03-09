@@ -2,3 +2,7 @@
 vendor/*
 starred.json
 public/node_modules/*
+node_modules
+dist
+mix-manifest.json
+fonts

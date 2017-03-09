@@ -9,6 +9,11 @@ import (
 	"github.com/redite/kleng/utils"
 )
 
+type MixManifest struct {
+	JS  string `json:"/dist/js/index.js"`
+	CSS string `json:"/dist/css/app.css"`
+}
+
 // RunServer ...
 func RunServer(c utils.Config) error {
 	fmt.Printf("creating server at port %d\n", c.Port)
@@ -21,21 +26,12 @@ func RunServer(c utils.Config) error {
 	// Serve index
 	router.HandleFunc("/", handleIndex)
 
+	// Server assets
+	router.PathPrefix("/dist/").Handler(http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist/"))))
+	router.PathPrefix("/fonts/").Handler(http.StripPrefix("/fonts/", http.FileServer(http.Dir("./fonts/"))))
+
 	// Serve API
 	router.HandleFunc("/starred", listStared)
-
-	// Serve CSS
-	router.HandleFunc("/css/style.css", handleStatic)
-
-	// Serve JavaScript
-	router.HandleFunc("/js/react-dom.min.js", handleStatic)
-	router.HandleFunc("/js/react-with-addons.min.js", handleStatic)
-	router.HandleFunc("/js/react-with-addons.js", handleStatic)
-	router.HandleFunc("/js/resounden.js", handleStatic)
-	router.HandleFunc("/js/resounden-utils.js", handleStatic)
-
-	// Handle not found
-	router.NotFoundHandler = http.HandlerFunc(handleNotFound)
 
 	// Set the router
 	http.Handle("/", router)
