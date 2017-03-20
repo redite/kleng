@@ -6,3 +6,8 @@ node_modules
 dist
 mix-manifest.json
 fonts
+kleng
+my.db
+*.py
+*.json
+build.sh
