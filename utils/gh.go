@@ -46,11 +46,3 @@ func (g GithubClient) ListStarred(page int) ([]*github.StarredRepository, error)
 
 	return stared, err
 }
-
-func (g GithubClient) PopulateStarred() error {
-	// for {
-	/// todo
-	// }
-
-	return nil
-}
