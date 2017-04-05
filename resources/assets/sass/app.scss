@@ -1,7 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+// 1. Your custom variables and variable overwrites.
+$global-link-color: #DA7D02;
 
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// 2. Import default variables and available mixins.
+@import "node_modules/uikit/src/scss/variables-theme.scss";
+@import "node_modules/uikit/src/scss/mixins-theme.scss";
 
-body {
-  padding-top: 70px;
-}
+// 3. Your custom mixin overwrites.
+@mixin hook-card() { color: #000; }
+
+// 4. Import UIkit.
+@import "node_modules/uikit/src/scss/uikit-theme.scss";
