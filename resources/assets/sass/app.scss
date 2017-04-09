@@ -8,5 +8,20 @@ $global-link-color: #DA7D02;
 // 3. Your custom mixin overwrites.
 @mixin hook-card() { color: #000; }
 
+.tm-navbar-container {
+  background: linear-gradient(to left, #28a5f5, #1e87f0) !important;
+}
+
+.tm-sidebar-left {
+  width: 300px;
+  padding: 45px 45px 60px 45px;
+  position: fixed;
+  top: 80px;
+  bottom: 0;
+  box-sizing: border-box;
+  border-right: 1px #e5e5e5 solid;
+  overflow: auto;
+}
+
 // 4. Import UIkit.
 @import "node_modules/uikit/src/scss/uikit-theme.scss";

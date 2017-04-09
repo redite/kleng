@@ -11,6 +11,6 @@ insert_final_newline = true
 indent_style = tab
 indent_size = 8
 
-[*.{html,json,js,jsx}]
+[*.{html,json,js,jsx,scss}]
 indent_style = space
 indent_size = 2
