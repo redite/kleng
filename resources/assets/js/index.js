@@ -1,11 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import UIkit from 'uikit';
-import Icons from 'uikit/dist/js/uikit-icons';
-
-UIkit.use(Icons);
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger';
+import klengApp from './reducers';
+import App from './containers/App';
 
 window.$ = window.jQuery = require('jquery');
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const store = createStore(
+  klengApp,
+  applyMiddleware(logger)
+);
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);
