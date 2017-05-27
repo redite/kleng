@@ -35,6 +35,8 @@ func main() {
 			log.Printf("Error Populating: %s\n", err.Error())
 		}
 		break
+	default:
+		flag.Usage()
 	}
 
 }
