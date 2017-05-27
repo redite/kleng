@@ -6,3 +6,8 @@ node_modules
 dist
 mix-manifest.json
 fonts
+tmp
+toolkit
+kleng
+*.db
+*.index
