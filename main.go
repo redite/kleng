@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/k0kubun/pp"
 	"github.com/redite/kleng/config"
 	"github.com/redite/kleng/server"
 )
@@ -16,9 +15,5 @@ func main() {
 		os.Exit(-1)
 	}
 
-	pp.Println(conf)
-	err = server.RunServer(conf)
-	if err != nil {
-		pp.Println(err)
-	}
+	server.RunServer(conf)
 }
