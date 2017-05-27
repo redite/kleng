@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/gorilla/mux"
-	"github.com/redite/kleng/utils"
+	"github.com/redite/kleng/config"
 )
 
 type MixManifest struct {
@@ -15,7 +15,7 @@ type MixManifest struct {
 }
 
 // RunServer ...
-func RunServer(c utils.Config) error {
+func RunServer(c config.Config) error {
 	fmt.Printf("creating server at port %d\n", c.Port)
 
 	router := mux.NewRouter()
@@ -40,7 +40,7 @@ func RunServer(c utils.Config) error {
 	fmt.Println("Listening...")
 	err := http.ListenAndServe(
 		fmt.Sprintf(":%d", c.Port),
-		nil,
+		router,
 	)
 
 	return err

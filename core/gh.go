@@ -1,7 +1,8 @@
-package utils
+package core
 
 import (
 	"github.com/google/go-github/github"
+	"github.com/redite/kleng/config"
 	"golang.org/x/oauth2"
 )
 
@@ -18,7 +19,7 @@ type StarredRepo struct {
 // NewGithubClient return client for github
 func NewGithubClient() GithubClient {
 
-	c, _ := LoadConfig()
+	c, _ := config.LoadConfig()
 
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: c.Token},

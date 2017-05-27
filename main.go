@@ -6,9 +6,9 @@ import (
 	"log"
 	"os"
 
+	"github.com/redite/kleng/config"
 	"github.com/redite/kleng/core"
 	"github.com/redite/kleng/server"
-	"github.com/redite/kleng/utils"
 )
 
 var (
@@ -16,10 +16,7 @@ var (
 )
 
 func main() {
-
-	flag.Parse()
-
-	conf, err := utils.LoadConfig()
+	conf, err := config.LoadConfig()
 	if err != nil {
 		fmt.Printf("Got error: %s", err.Error())
 		os.Exit(-1)
