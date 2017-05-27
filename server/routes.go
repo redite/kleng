@@ -9,6 +9,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/k0kubun/pp"
+	"github.com/redite/kleng/core"
 	"github.com/redite/kleng/utils"
 )
 
@@ -31,7 +32,7 @@ func handleIndex(w http.ResponseWriter, r *http.Request) {
 }
 
 func listStared(w http.ResponseWriter, r *http.Request) {
-	c := utils.NewGithubClient()
+	c := core.NewGithubClient()
 
 	starred, err := c.ListStarred(0)
 	if err != nil {
