@@ -1,0 +1,8 @@
+{
+  "boltdb": {
+    "db_path": "~/go/src/github.com/redite/kleng/my.db"
+  },
+  "blevesearch": {
+    "index_path": "~/go/src/github.com/redite/kleng/index.bleve"
+  }
+}

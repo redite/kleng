@@ -2,12 +2,24 @@ package server
 
 import (
 	"net/http"
+	"os"
 
 	"fmt"
 
 	"github.com/gorilla/mux"
 	"github.com/redite/kleng/config"
 )
+
+func initRoutes(mx *mux.Router) {
+	webRoot, err := os.Getwd()
+	if err != nil {
+		panic("could not retrieve working directory")
+	}
+
+	fmt.Println(webRoot)
+
+	mx.PathPrefix("/").Handler(http.FileServer(http.Dir(webRoot + "/public/")))
+}
 
 // RunServer ...
 func RunServer(c config.Config) error {
@@ -19,9 +31,9 @@ func RunServer(c config.Config) error {
 	router.HandleFunc("/", handleNoWWW).Host("www.{domain}.{tld}")
 
 	// Serve API
-	router.HandleFunc("/starred", listStared)
+	router.HandleFunc("/api/starred", listStared)
 
-	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./public/")))
+	initRoutes(router)
 
 	// Set the router
 	http.Handle("/", router)
