@@ -1,8 +1,0 @@
-{
-  "boltdb": {
-    "db_path": "./my.db"
-  },
-  "blevesearch": {
-    "index_path": "./index.bleve"
-  }
-}

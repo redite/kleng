@@ -6,3 +6,4 @@ toolkit
 kleng
 *.db
 *.index
+config.json
