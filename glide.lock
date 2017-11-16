@@ -1,8 +1,8 @@
 hash: 2e721b90025a63643c0a1ed91ae70af62469c0e6d7eaea56e8d99e33028d87cf
-updated: 2017-03-03T20:03:35.528329219+08:00
+updated: 2017-11-12T08:09:45.133377232+08:00
 imports:
 - name: github.com/boltdb/bolt
-  version: 583e8937c61f1af6513608ccc75c97b6abdf4ff9
+  version: 2f1ce7a837dcb8da3ec595b1dac9d0632f0f99e8
   subpackages:
   - '...'
 - name: github.com/golang/protobuf
@@ -20,11 +20,11 @@ imports:
 - name: github.com/gorilla/context
   version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
 - name: github.com/gorilla/handlers
-  version: 3a5767ca75ece5f7f1440b1d16975247f8d8b221
+  version: 90663712d74cb411cbef281bc1e08c19d1a76145
 - name: github.com/gorilla/mux
-  version: 392c28fe23e1c45ddba891b0320b3b5df220beea
+  version: 7f08801859139f86dfafd1c296e2cba9a80d292e
 - name: github.com/joho/godotenv
-  version: 726cc8b906e3d31c70a9671c90a13716a8d3f50d
+  version: a79fa1e548e2c689c241d10173efd51e5d689d5b
 - name: github.com/k0kubun/pp
   version: d1532fc5d94ecdf2da29e24d7b99721f3287de4a
 - name: github.com/kelseyhightower/envconfig

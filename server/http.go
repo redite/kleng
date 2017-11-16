@@ -2,6 +2,7 @@ package server
 
 import (
 	"net/http"
+	"os"
 
 	"fmt"
 
@@ -9,9 +10,15 @@ import (
 	"github.com/redite/kleng/config"
 )
 
-type MixManifest struct {
-	JS  string `json:"/dist/js/index.js"`
-	CSS string `json:"/dist/css/app.css"`
+func initRoutes(mx *mux.Router) {
+	webRoot, err := os.Getwd()
+	if err != nil {
+		panic("could not retrieve working directory")
+	}
+
+	fmt.Println(webRoot)
+
+	mx.PathPrefix("/").Handler(http.FileServer(http.Dir(webRoot + "/public/")))
 }
 
 // RunServer ...
@@ -23,15 +30,10 @@ func RunServer(c config.Config) error {
 	// Force no WWW
 	router.HandleFunc("/", handleNoWWW).Host("www.{domain}.{tld}")
 
-	// Serve index
-	router.HandleFunc("/", handleIndex)
-
-	// Server assets
-	router.PathPrefix("/dist/").Handler(http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist/"))))
-	router.PathPrefix("/fonts/").Handler(http.StripPrefix("/fonts/", http.FileServer(http.Dir("./fonts/"))))
-
 	// Serve API
-	router.HandleFunc("/starred", listStared)
+	router.HandleFunc("/api/starred", listStared)
+
+	initRoutes(router)
 
 	// Set the router
 	http.Handle("/", router)
